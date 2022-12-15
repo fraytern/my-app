@@ -1,23 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Roster from './Roster';
 //import './custom.scss';
 import reportWebVitals from './reportWebVitals';
 import '../node_modules/react-bootstrap/dist/react-bootstrap';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Head from './Navbar';
+import Head from './Web Pages/Components/Navbar';
+import Home from './Web Pages/Home';
+import About from './Web Pages/About';
+import RosterData from './RosterData';
+import ScheduleFunc from './Schedule';
 
 const router = createBrowserRouter ([
   {
     path: "/", 
-    element: <div>Hello World!</div>,
+    //element: <div>Hello World!</div>,
+    element: <Home />,
+  },
+
+  {
+    path: "/about", 
+    element: <About />,
   },
 
   {
     path: "/roster", 
-    element: <Head />,
+    element: <Roster />,
+  },
+  
+  {
+    path: "/schedule", 
+    element: <ScheduleFunc />,
   }
 ]);
 
